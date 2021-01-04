@@ -25,7 +25,7 @@ pinForm.addEventListener('submit', (e) => {
     e.preventDefault()
     const pincode = pincodeInput.value
     console.log(pincode)
-    fetch('http://localhost:3000/weatherbypin?pin=' + pincode).then((response) => {
+    fetch('/weatherbypin?pin=' + pincode).then((response) => {
     response.json().then((data) => {
         console.log(data)
         if (data.error) {
@@ -50,7 +50,7 @@ weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
     const location = search.value
     console.log(location)
-    fetch('http://localhost:3000/weather?address=' + location).then((response) => {
+    fetch('/weather?address=' + location).then((response) => {
     response.json().then((data) => {
         console.log(data)
         if (data.error) {
